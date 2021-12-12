@@ -96,7 +96,7 @@ def callback():
         response = machine.advance(event)
         if response == False:
             # origional code
-            send_text_message(event.reply_token, "Not Entering any State")
+            send_text_message(event.reply_token, "type 'state1' or 'state2'")
             '''
             wrong test
             # add code below...
