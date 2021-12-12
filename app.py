@@ -152,7 +152,7 @@ def callback():
         response = machine.advance(event)
         if response == False:
             # origional code
-            send_text_message(event.reply_token, "開始 : \n'1' 職場\n'2' 約會")
+            send_text_message(event.reply_token, "選擇場合 : \n'1' 職場\n'2' 約會")
 
     return "OK"
     
