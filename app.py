@@ -12,7 +12,7 @@ from utils import send_text_message
 
 load_dotenv()
 
-
+'''
 machine = TocMachine(
     states=["user", "state1", "state2"],    # 總共有的states
     transitions=[
@@ -25,6 +25,28 @@ machine = TocMachine(
         {
             "trigger": "advance",
             "source": "user",
+            "dest": "state2",
+            "conditions": "is_going_to_state2",
+        },
+        {"trigger": "go_back", "source": ["state1", "state2"], "dest": "user"},
+    ],
+    initial="user",
+    auto_transitions=False,
+    show_conditions=True,
+)
+'''
+machine = TocMachine(
+    states=["user", "state1", "state2"],    # 總共有的states
+    transitions=[
+        {
+            "trigger": "advance",   # ???
+            "source": "user",   # 現在的state
+            "dest": "state1",   # 會去到哪個state
+            "conditions": "is_going_to_state1", # ???
+        },
+        {
+            "trigger": "advance",
+            "source": "state1",
             "dest": "state2",
             "conditions": "is_going_to_state2",
         },
