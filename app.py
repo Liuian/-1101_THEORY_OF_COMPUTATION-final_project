@@ -14,13 +14,13 @@ load_dotenv()
 
 
 machine = TocMachine(
-    states=["user", "state1", "state2"],
+    states=["user", "state1", "state2"],    # 總共有的states
     transitions=[
         {
-            "trigger": "advance",
-            "source": "user",
-            "dest": "state1",
-            "conditions": "is_going_to_state1",
+            "trigger": "advance",   # ???
+            "source": "user",   # 現在的state
+            "dest": "state1",   # 會去到哪個state
+            "conditions": "is_going_to_state1", # ???
         },
         {
             "trigger": "advance",
@@ -53,7 +53,7 @@ if channel_access_token is None:
 line_bot_api = LineBotApi(channel_access_token)
 parser = WebhookParser(channel_secret)
 
-
+# 接收line的資訊：誰傳了怎麼樣的信息給我們的聊天機器人->所以要用POST
 @app.route("/callback", methods=["POST"])
 def callback():
     signature = request.headers["X-Line-Signature"]
@@ -66,7 +66,7 @@ def callback():
         events = parser.parse(body, signature)
     except InvalidSignatureError:
         abort(400)
-
+    '''
     # if event is MessageEvent and message is TextMessage, then echo text
     for event in events:
         if not isinstance(event, MessageEvent):
@@ -78,6 +78,22 @@ def callback():
             event.reply_token, TextSendMessage(text=event.message.text)
         )
 
+    return "OK"
+    '''
+    # if event is MessageEvent and message is TextMessage, then echo text
+    for event in events:
+        if not isinstance(event, MessageEvent):
+            continue
+        if not isinstance(event.message, TextMessage):
+            continue
+        if not isinstance(event.message.text, str):
+            continue
+        print(f"\nFSM STATE: {machine.state}")
+        print(f"REQUEST BODY: \n{body}")
+        response = machine.advance(event)
+        if response == False:
+            send_text_message(event.reply_token, "Not Entering any State")
+            
     return "OK"
 
 
