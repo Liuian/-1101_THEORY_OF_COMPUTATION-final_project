@@ -15,7 +15,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state1")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "輸入:\n'1'談判\n'2'會議、外出開會\n'3'簽約、面試")
+        send_text_message(reply_token, "選擇活動:\n'1'談判\n'2'會議、外出開會\n'3'簽約、面試")
         # self.go_back()
 # work-1:negotitation
     def is_going_to_negotitation(self, event):
