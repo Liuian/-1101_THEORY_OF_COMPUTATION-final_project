@@ -13,6 +13,7 @@ from utils import send_text_message
 load_dotenv()
 
 '''
+# origional code
 machine = TocMachine(
     states=["user", "state1", "state2"],    # 總共有的states
     transitions=[
@@ -50,7 +51,11 @@ machine = TocMachine(
             "dest": "state2",
             "conditions": "is_going_to_state2",
         },
-        {"trigger": "go_back", "source": ["state1", "state2"], "dest": "user"},
+        {
+            "trigger": "go_back", 
+            "source": ["state2"], 
+            "dest": "user"
+        },
     ],
     initial="user",
     auto_transitions=False,
