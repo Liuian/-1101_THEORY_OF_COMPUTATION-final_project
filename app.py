@@ -37,23 +37,53 @@ machine = TocMachine(
 )
 '''
 machine = TocMachine(
-    states=["user", "state1", "state2"],    # 總共有的states
+    states=[
+        "user",
+        "work",
+        "dating",
+        "negotitation",
+        "meeting",
+        "interviewcontract"
+    ],    # 總共有的states
     transitions=[
-        {
+        {   # user->work
             "trigger": "advance",   # ???
             "source": "user",   # 現在的state
-            "dest": "state1",   # 會去到哪個state
-            "conditions": "is_going_to_state1", # ???
+            "dest": "work",   # 會去到哪個state
+            "conditions": "is_going_to_work", # ???
         },
-        {
+        {   # user->dating
             "trigger": "advance",
-            "source": "state1",
-            "dest": "state2",
-            "conditions": "is_going_to_state2",
+            "source": "user",
+            "dest": "dating",
+            "conditions": "is_going_to_dating",
+        },
+        {   # work->negotitation
+            "trigger": "advance",
+            "source": "work",
+            "dest": "negotitation",
+            "conditions": "is_going_to_negotitation",
+        },
+        {   # work->meeting
+            "trigger": "advance",
+            "source": "work",
+            "dest": "meeting",
+            "conditions": "is_going_to_meeting",
+        },
+        {   # work->interviewcontract
+            "trigger": "advance",
+            "source": "work",
+            "dest": "interviewcontract",
+            "conditions": "is_going_to_interviewcontract",
         },
         {
             "trigger": "go_back", 
-            "source": ["state2"], 
+            "source": [
+                "dating",
+                "negotitation",
+                "meeting",
+                "interviewcontract"
+            ], 
             "dest": "user"
         },
     ],
@@ -108,7 +138,6 @@ def callback():
         )
 
     return "OK"
-    
     '''
     # if event is MessageEvent and message is TextMessage, then echo text
     for event in events:
@@ -123,7 +152,7 @@ def callback():
         response = machine.advance(event)
         if response == False:
             # origional code
-            send_text_message(event.reply_token, "type 'state1' or 'state2'")
+            send_text_message(event.reply_token, "開始 : \n'1' 職場\n'2' 約會")
             '''
             wrong test
             # add code below...
