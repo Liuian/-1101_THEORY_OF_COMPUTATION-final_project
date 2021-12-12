@@ -95,10 +95,10 @@ def callback():
         print(f"REQUEST BODY: \n{body}")
         response = machine.advance(event)
         if response == False:
-            '''
             # origional code
             send_text_message(event.reply_token, "Not Entering any State")
             '''
+            wrong test
             # add code below...
             if machine.state == 'user':
                 send_text_message(event.reply_token, "User")
@@ -106,9 +106,7 @@ def callback():
                 send_text_message(event.reply_token, "state1")
             elif machine.state == 'state2':
                 send_text_message(event.reply_token, "state2")
-
-
-
+            '''
 
     return "OK"
     
