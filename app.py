@@ -153,16 +153,6 @@ def callback():
         if response == False:
             # origional code
             send_text_message(event.reply_token, "開始 : \n'1' 職場\n'2' 約會")
-            '''
-            wrong test
-            # add code below...
-            if machine.state == 'user':
-                send_text_message(event.reply_token, "User")
-            elif machine.state == 'state1':
-                send_text_message(event.reply_token, "state1")
-            elif machine.state == 'state2':
-                send_text_message(event.reply_token, "state2")
-            '''
 
     return "OK"
     
