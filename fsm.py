@@ -27,7 +27,6 @@ class TocMachine(GraphMachine):
 
         reply_token = event.reply_token
         send_text_message(reply_token, "暖色系 ex:黃色、橘色")
-        send_text_message(event.reply_token, "開始 : \n'1' 職場\n'2' 約會")
         self.go_back()
 
     def on_exit_negotitation(self):
