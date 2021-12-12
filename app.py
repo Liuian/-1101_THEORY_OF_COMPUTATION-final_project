@@ -53,7 +53,7 @@ if channel_access_token is None:
 line_bot_api = LineBotApi(channel_access_token)
 parser = WebhookParser(channel_secret)
 
-'''
+
 # 接收line的資訊：誰傳了怎麼樣的信息給我們的聊天機器人->所以要用POST
 @app.route("/callback", methods=["POST"])
 def callback():
@@ -68,7 +68,7 @@ def callback():
     except InvalidSignatureError:
         abort(400)
 
-    
+    '''
     # if event is MessageEvent and message is TextMessage, then echo text
     for event in events:
         if not isinstance(event, MessageEvent):
@@ -82,7 +82,7 @@ def callback():
 
     return "OK"
     
-    
+    '''
     # if event is MessageEvent and message is TextMessage, then echo text
     for event in events:
         if not isinstance(event, MessageEvent):
@@ -98,8 +98,8 @@ def callback():
             send_text_message(event.reply_token, "Not Entering any State")
 
     return "OK"
-    '''
-
+    
+'''
 @app.route("/webhook", methods=["POST"])
 def webhook_handler():
     signature = request.headers["X-Line-Signature"]
@@ -128,7 +128,7 @@ def webhook_handler():
             send_text_message(event.reply_token, "Not Entering any State")
 
     return "OK"
-
+'''
 
 @app.route("/show-fsm", methods=["GET"])
 def show_fsm():
