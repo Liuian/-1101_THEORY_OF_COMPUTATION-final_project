@@ -54,7 +54,7 @@ class TocMachine(GraphMachine):
                 text = '2'
             ),
         ]
-        url = 'https://i.imgur.com/NpPRXx3.png'
+        url = 'https://i.imgur.com/m2J2jdJ.png'
         send_button_message(event.reply_token, title, text, btn, url)
 
         self.go_back()
