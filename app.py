@@ -44,17 +44,25 @@ machine = TocMachine(
         "negotitation",
         "meeting",
         "interviewcontract"
+        "occasion"
+
     ],    # 總共有的states
     transitions=[
-        {   # user->work
+        {   # user->occasion
             "trigger": "advance",   # ???
             "source": "user",   # 現在的state
+            "dest": "occasion",   # 會去到哪個state
+            "conditions": "", # ???
+        },
+        {   # occasion->work
+            "trigger": "advance",   # ???
+            "source": "occasion",   # 現在的state
             "dest": "work",   # 會去到哪個state
             "conditions": "is_going_to_work", # ???
         },
-        {   # user->dating
+        {   # occasion->dating
             "trigger": "advance",
-            "source": "user",
+            "source": "occasion",
             "dest": "dating",
             "conditions": "is_going_to_dating",
         },
@@ -152,7 +160,7 @@ def callback():
         response = machine.advance(event)
         if response == False:
             # origional code
-            send_text_message(event.reply_token, "選擇場合 : \n'1' 職場\n'2' 約會")
+            send_text_message(event.reply_token, "選項 : \n'1' 特定場合穿搭\n'2' 穿搭顏色心理學")
 
     return "OK"
     

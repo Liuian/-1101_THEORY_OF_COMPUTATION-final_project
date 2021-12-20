@@ -6,7 +6,18 @@ from utils import send_text_message
 class TocMachine(GraphMachine):
     def __init__(self, **machine_configs):
         self.machine = GraphMachine(model=self, **machine_configs)
-# work
+# occasion
+    def is_going_to_occasion(self, event):
+        text = event.message.text
+        return text.lower() == "1"
+
+    def on_enter_occasion(self, event):
+        print("I'm entering state1")
+
+        reply_token = event.reply_token
+        send_text_message(reply_token, "選擇活動:\n'1'職場\n'2'約會")
+        # self.go_back()
+# work(occasion->work)
     def is_going_to_work(self, event):
         text = event.message.text
         return text.lower() == "1"
@@ -59,7 +70,7 @@ class TocMachine(GraphMachine):
     
     def on_exit_interviewcontract(self):
         print("Leaving state2")
-# dating
+# dating(occasion->dating)
     def is_going_to_dating(self, event):
         text = event.message.text
         return text.lower() == "2"
