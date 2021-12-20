@@ -43,7 +43,7 @@ machine = TocMachine(
         "dating",
         "negotitation",
         "meeting",
-        "interviewcontract"
+        "interviewcontract",
         "occasion"
 
     ],    # 總共有的states
