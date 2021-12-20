@@ -222,7 +222,7 @@ def callback():
         response = machine.advance(event)
         if response == False:
             # origional code
-            send_text_message(event.reply_token, "選項 : \n'1' 特定場合穿搭\n'2' 穿搭顏色心理學")
+            send_text_message(event.reply_token, "（重新開始）\n'1' 特定場合顏色穿搭\n'2' 穿搭顏色心理學")
 
     return "OK"
     

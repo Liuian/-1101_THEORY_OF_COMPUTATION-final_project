@@ -34,10 +34,11 @@ class TocMachine(GraphMachine):
         return text.lower() == "1"
 
     def on_enter_red(self, event):
-        print("I'm entering state1")
-
-        reply_token = event.reply_token
-        send_text_message(reply_token, "red\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
+        # print("I'm entering state1")
+        # reply_token = event.reply_token
+        # send_text_message(reply_token, "red\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
+        url = 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mary-leest-wears-a-blue-denim-shirt-a-blue-large-quilted-news-photo-1610104937.?crop=1.00xw:0.835xh;0,0.165xh&resize=980:*'
+        send_image_message(event.reply_token, url)
         self.go_back()
 
     def on_exit_red(self):
