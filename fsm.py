@@ -1,5 +1,6 @@
 from transitions.extensions import GraphMachine
-from utils import send_text_message, send_image_message
+from utils import send_text_message, send_image_message, send_button_message
+from linebot.models import MessageTemplateAction
 
 class TocMachine(GraphMachine):
     def __init__(self, **machine_configs):
@@ -32,12 +33,30 @@ class TocMachine(GraphMachine):
         return text.lower() == "1"
 
     def on_enter_red(self, event):
+        #------send text message
         # print("I'm entering state1")
         
         # reply_token = event.reply_token
         # send_text_message(reply_token, "red\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
+        #------send image message
+        # url = 'https://i.imgur.com/NpPRXx3.png'
+        # send_image_message(event.reply_token, url)
+        
+        title = 'RED'
+        text = 'RED describtion'
+        btn = [
+            MessageTemplateAction(
+                label = '1',
+                text ='1'
+            ),
+            MessageTemplateAction(
+                label = '2',
+                text = '2'
+            ),
+        ]
         url = 'https://i.imgur.com/NpPRXx3.png'
-        send_image_message(event.reply_token, url)
+        send_button_message(event.reply_token, title, text, btn, url)
+
         self.go_back()
 
     def on_exit_red(self):
