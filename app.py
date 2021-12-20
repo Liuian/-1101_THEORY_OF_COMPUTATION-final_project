@@ -109,7 +109,6 @@ machine = TocMachine(
             "dest": "black",   # 會去到哪個state
             "conditions": "is_going_to_black", # ???
         },
-
         {   # occasion->work
             "trigger": "advance",   # ???
             "source": "occasion",   # 現在的state
@@ -140,13 +139,20 @@ machine = TocMachine(
             "dest": "interviewcontract",
             "conditions": "is_going_to_interviewcontract",
         },
-        {       #go_back
+        {   #go_back
             "trigger": "go_back", 
             "source": [
                 "dating",
                 "negotitation",
                 "meeting",
-                "interviewcontract"
+                "interviewcontract",
+                "red",
+                "blue",
+                "green",
+                "yellow",
+                "purple",
+                "wite",
+                "black"
             ], 
             "dest": "user"
         },
