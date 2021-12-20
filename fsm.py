@@ -1,6 +1,6 @@
 from transitions.extensions import GraphMachine
 
-from utils import send_text_message
+from utils import send_text_message, send_image_message
 
 
 class TocMachine(GraphMachine):
@@ -26,7 +26,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state1")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "選擇顏色:\n'1'藍色\n'2'紅色\n'3'綠色\n'4'黃色\n'5'紫色\n'6'白色\n'7'黑色")
+        send_text_message(reply_token, "選擇顏色:\n'1'紅色\n'2'藍色\n'3'綠色\n'4'黃色\n'5'紫色\n'6'白色\n'7'黑色")
         # self.go_back()
 # psychology->red
     def is_going_to_red(self, event):
@@ -35,9 +35,10 @@ class TocMachine(GraphMachine):
 
     def on_enter_red(self, event):
         # print("I'm entering state1")
+        
         # reply_token = event.reply_token
         # send_text_message(reply_token, "red\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
-        url = 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mary-leest-wears-a-blue-denim-shirt-a-blue-large-quilted-news-photo-1610104937.?crop=1.00xw:0.835xh;0,0.165xh&resize=980:*'
+        url = 'https://drive.google.com/file/d/1_fGPe52OyzqBsbBL1f3w4DqehJ6Kh_lX/view?usp=sharing'
         send_image_message(event.reply_token, url)
         self.go_back()
 
