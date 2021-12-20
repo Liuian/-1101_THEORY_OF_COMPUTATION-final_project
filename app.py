@@ -44,8 +44,15 @@ machine = TocMachine(
         "negotitation",
         "meeting",
         "interviewcontract",
-        "occasion"
-
+        "occasion",
+        "psychology",
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "purple",
+        "wite",
+        "black"
     ],    # 總共有的states
     transitions=[
         {   # user->occasion
@@ -54,6 +61,55 @@ machine = TocMachine(
             "dest": "occasion",   # 會去到哪個state
             "conditions": "is_going_to_occasion", # ???
         },
+        {   # user->psychology
+            "trigger": "advance",   # ???
+            "source": "user",   # 現在的state
+            "dest": "psychology",   # 會去到哪個state
+            "conditions": "is_going_to_psychology", # ???
+        },
+        {   # psychology->red
+            "trigger": "advance",   # ???
+            "source": "psychology",   # 現在的state
+            "dest": "red",   # 會去到哪個state
+            "conditions": "is_going_to_red", # ???
+        },
+        {   # psychology->blue
+            "trigger": "advance",   # ???
+            "source": "psychology",   # 現在的state
+            "dest": "blue",   # 會去到哪個state
+            "conditions": "is_going_to_blue", # ???
+        },
+        {   # psychology->green
+            "trigger": "advance",   # ???
+            "source": "psychology",   # 現在的state
+            "dest": "green",   # 會去到哪個state
+            "conditions": "is_going_to_green", # ???
+        },
+        {   # psychology->yellow
+            "trigger": "advance",   # ???
+            "source": "psychology",   # 現在的state
+            "dest": "yellow",   # 會去到哪個state
+            "conditions": "is_going_to_yellow", # ???
+        },
+        {   # psychology->purple
+            "trigger": "advance",   # ???
+            "source": "psychology",   # 現在的state
+            "dest": "purple",   # 會去到哪個state
+            "conditions": "is_going_to_purple", # ???
+        },
+        {   # psychology->white
+            "trigger": "advance",   # ???
+            "source": "psychology",   # 現在的state
+            "dest": "white",   # 會去到哪個state
+            "conditions": "is_going_to_wite", # ???
+        },
+        {   # psychology->black
+            "trigger": "advance",   # ???
+            "source": "psychology",   # 現在的state
+            "dest": "black",   # 會去到哪個state
+            "conditions": "is_going_to_black", # ???
+        },
+
         {   # occasion->work
             "trigger": "advance",   # ???
             "source": "occasion",   # 現在的state
