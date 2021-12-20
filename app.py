@@ -52,7 +52,7 @@ machine = TocMachine(
             "trigger": "advance",   # ???
             "source": "user",   # 現在的state
             "dest": "occasion",   # 會去到哪個state
-            "conditions": "", # ???
+            "conditions": "is_going_to_occasion", # ???
         },
         {   # occasion->work
             "trigger": "advance",   # ???
