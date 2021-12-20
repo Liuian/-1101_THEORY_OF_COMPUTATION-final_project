@@ -9,7 +9,7 @@ class TocMachine(GraphMachine):
 # occasion
     def is_going_to_occasion(self, event):
         text = event.message.text
-        return text.lower() == "1"
+        return text.lower() == "2"
 
     def on_enter_occasion(self, event):
         print("I'm entering state1")
