@@ -36,7 +36,7 @@ class TocMachine(GraphMachine):
         
         # reply_token = event.reply_token
         # send_text_message(reply_token, "red\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
-        url = 'https://drive.google.com/file/d/1_fGPe52OyzqBsbBL1f3w4DqehJ6Kh_lX/view?usp=sharing'
+        url = 'https://drive.google.com/file/d/1_fGPe52OyzqBsbBL1f3w4DqehJ6Kh_lX/view?usp=sharing.jpeg'
         send_image_message(event.reply_token, url)
         self.go_back()
 
