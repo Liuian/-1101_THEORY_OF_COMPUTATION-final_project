@@ -37,7 +37,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state1")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "red")
+        send_text_message(reply_token, "red\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
         self.go_back()
 
     def on_exit_red(self):
@@ -51,7 +51,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state1")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "blue")
+        send_text_message(reply_token, "blue\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
         self.go_back()
 
     def on_exit_blue(self):
@@ -65,7 +65,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state1")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "green")
+        send_text_message(reply_token, "green\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
         self.go_back()
 
     def on_exit_green(self):
@@ -79,7 +79,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state1")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "yellow")
+        send_text_message(reply_token, "yellow\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
         self.go_back()
 
     def on_exit_yellow(self):
@@ -93,7 +93,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state1")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "purple")
+        send_text_message(reply_token, "purple\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
         self.go_back()
 
     def on_exit_purple(self):
@@ -107,7 +107,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state1")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "wite")
+        send_text_message(reply_token, "wite\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
         self.go_back()
 
     def on_exit_wite(self):
@@ -121,7 +121,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state1")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "black")
+        send_text_message(reply_token, "black\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
         self.go_back()
 
     def on_exit_black(self):
@@ -160,7 +160,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state1")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "暖色系 ex:黃色、橘色\n\n重新開始\n\n選擇場合 : \n'1' 職場\n'2' 約會")
+        send_text_message(reply_token, "暖色系 ex:黃色、橘色\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
         self.go_back()
 
     def on_exit_negotitation(self):
@@ -174,7 +174,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state1")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "冷色系 ex:藍色、綠色、紫色\n\n重新開始\n\n選擇場合 : \n'1' 職場\n'2' 約會")
+        send_text_message(reply_token, "冷色系 ex:藍色、綠色、紫色\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
         self.go_back()
 
     def on_exit_meeting(self):
@@ -188,7 +188,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state1")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "無彩色 ex:黑色、灰色、白色\n\n重新開始\n\n選擇場合 : \n'1' 職場\n'2' 約會")
+        send_text_message(reply_token, "無彩色 ex:黑色、灰色、白色\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
         self.go_back()
     
     def on_exit_interviewcontract(self):
