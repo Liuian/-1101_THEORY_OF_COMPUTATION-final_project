@@ -58,8 +58,8 @@ class TocMachine(GraphMachine):
                 text = '7'
             ),
         ]
-        #url = ''
-        send_button_message2(event.reply_token, title, text, btn)
+        url = ''
+        send_button_message(event.reply_token, title, text, btn, url)
 
         self.go_back()
 # psychology->red
