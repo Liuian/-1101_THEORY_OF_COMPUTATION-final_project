@@ -101,7 +101,7 @@ machine = TocMachine(
             "trigger": "advance",   # ???
             "source": "psychology",   # 現在的state
             "dest": "white",   # 會去到哪個state
-            "conditions": "is_going_to_wite", # ???
+            "conditions": "is_going_to_white", # ???
         },
         {   # psychology->black
             "trigger": "advance",   # ???
