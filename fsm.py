@@ -35,23 +35,22 @@ class TocMachine(GraphMachine):
     def on_enter_red(self, event):
         #------send text message
         # print("I'm entering state1")
-        
         # reply_token = event.reply_token
         # send_text_message(reply_token, "red\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
         #------send image message
         # url = 'https://i.imgur.com/NpPRXx3.png'
         # send_image_message(event.reply_token, url)
         
-        title = 'RED'
-        text = 'RED describtion'
+        title = '紅色-穿搭顏色心理學'
+        text = '紅色總是最吸引人目光，卻又最難駕馭，愛穿紅色的人，大多具有冒險精神，勇於接受挑戰、擁有開闊的心胸接納新鮮事物，這類型的人通常也擅長於處理人際關係。另外，不少人喜歡將紅黑色穿衣搭配，象徵著慾望和野心，但往往因為有太多慾求，較難感到知足。'
         btn = [
             MessageTemplateAction(
-                label = '1',
-                text ='1'
+                label = '特定場合顏色穿搭',
+                text ='特定場合顏色穿搭'
             ),
             MessageTemplateAction(
-                label = '2',
-                text = '2'
+                label = '穿搭顏色心理學',
+                text = '穿搭顏色心理學'
             ),
         ]
         url = 'https://i.imgur.com/m2J2jdJ.png?1'
