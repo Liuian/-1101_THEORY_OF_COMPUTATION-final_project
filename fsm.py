@@ -41,16 +41,16 @@ class TocMachine(GraphMachine):
         # url = 'https://i.imgur.com/NpPRXx3.png'
         # send_image_message(event.reply_token, url)
         
-        title = 'RED'
+        title = '紅色-穿搭顏色心理學'
         text = 'RED describtion'
         btn = [
             MessageTemplateAction(
-                label = '1',
-                text ='1'
+                label = '特定場合穿搭顏色建議',
+                text ='特定場合穿搭顏色建議'
             ),
             MessageTemplateAction(
-                label = '2',
-                text = '2'
+                label = '穿搭顏色心理學',
+                text = '穿搭顏色心理學'
             ),
         ]
         url = 'https://i.imgur.com/m2J2jdJ.png?1'
