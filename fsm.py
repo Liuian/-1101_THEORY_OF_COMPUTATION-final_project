@@ -45,11 +45,11 @@ class TocMachine(GraphMachine):
         text = 'RED describtion'
         btn = [
             MessageTemplateAction(
-                label = '特定場合穿搭顏色建議',
+                label = '1',
                 text ='特定場合穿搭顏色建議'
             ),
             MessageTemplateAction(
-                label = '穿搭顏色心理學',
+                label = '2',
                 text = '穿搭顏色心理學'
             ),
         ]
