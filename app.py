@@ -51,7 +51,7 @@ machine = TocMachine(
         "green",
         "yellow",
         "purple",
-        "wite",
+        "white",
         "black"
     ],    # 總共有的states
     transitions=[
