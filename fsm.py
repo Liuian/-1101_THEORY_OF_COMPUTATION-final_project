@@ -22,11 +22,46 @@ class TocMachine(GraphMachine):
         return text.lower() == "2"
 
     def on_enter_psychology(self, event):
-        print("I'm entering state1")
-
+        '''print("I'm entering state1")
         reply_token = event.reply_token
         send_text_message(reply_token, "選擇顏色:\n'1'紅色\n'2'藍色\n'3'綠色\n'4'黃色\n'5'紫色\n'6'白色\n'7'黑色")
-        # self.go_back()
+        # self.go_back()'''
+        title = '選擇顏色'
+        text = '選擇你想了解的顏色穿搭心理學'
+        btn = [
+            MessageTemplateAction(
+                label = '紅色',
+                text ='1'
+            ),
+            MessageTemplateAction(
+                label = '藍色',
+                text = '2'
+            ),
+            MessageTemplateAction(
+                label = '綠色',
+                text = '3'
+            ),
+            MessageTemplateAction(
+                label = '黃色',
+                text = '4'
+            ),
+            MessageTemplateAction(
+                label = '紫色',
+                text = '5'
+            ),
+            MessageTemplateAction(
+                label = '白色',
+                text = '6'
+            ),
+            MessageTemplateAction(
+                label = '黑色',
+                text = '7'
+            ),
+        ]
+        #url = ''
+        send_button_message2(event.reply_token, title, text, btn)
+
+        self.go_back()
 # psychology->red
     def is_going_to_red(self, event):
         text = event.message.text
