@@ -130,7 +130,7 @@ class TocMachine(GraphMachine):
         send_text_message(reply_token, "yellow\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
         self.go_back()'''
         title = '黃色-穿搭顏色心理學'
-        text = '鮮豔的黃色給人活潑開朗的印象，就像小小兵一般擁有天真爛漫的內心，對生活富有熱情、擁有非凡的創意力。'
+        text = '黃色給人活潑開朗的印象，就像小小兵一般擁有天真爛漫的內心，對生活富有熱情、擁有非凡的創意。'
         btn = [
             MessageTemplateAction(
                 label = '特定場合穿搭顏色建議',
