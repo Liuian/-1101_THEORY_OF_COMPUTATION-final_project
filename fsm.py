@@ -60,7 +60,6 @@ class TocMachine(GraphMachine):
 
     def on_exit_red(self):
         print("Leaving state2")
-
 # psychology->blue
     def is_going_to_blue(self, event):
         text = event.message.text
@@ -178,11 +177,11 @@ class TocMachine(GraphMachine):
     def on_exit_purple(self):
         print("Leaving state2")
 # psychology->wite
-    def is_going_to_wite(self, event):
+    def is_going_to_white(self, event):
         text = event.message.text
         return text.lower() == "6"
 
-    def on_enter_wite(self, event):
+    def on_enter_white(self, event):
         '''print("I'm entering state1")
         reply_token = event.reply_token
         send_text_message(reply_token, "wite\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
@@ -204,7 +203,7 @@ class TocMachine(GraphMachine):
 
         self.go_back()
 
-    def on_exit_wite(self):
+    def on_exit_white(self):
         print("Leaving state2")
 # psychology->black
     def is_going_to_black(self, event):
