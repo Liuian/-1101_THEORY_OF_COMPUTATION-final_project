@@ -41,7 +41,7 @@ class TocMachine(GraphMachine):
         # url = 'https://i.imgur.com/NpPRXx3.png'
         # send_image_message(event.reply_token, url)
         
-        title = '紅色-穿搭顏色心理學'
+        #title = '紅色-穿搭顏色心理學'
         text = '愛穿紅色的人，大多具有冒險精神，勇於接受挑戰、擁有開闊的心胸接納新鮮事物，這類型的人通常也擅長於處理人際關係。'
         btn = [
             MessageTemplateAction(
@@ -54,12 +54,13 @@ class TocMachine(GraphMachine):
             ),
         ]
         url = 'https://i.imgur.com/m2J2jdJ.png?1'
-        send_button_message(event.reply_token, title, text, btn, url)
+        send_button_message(event.reply_token, text, btn, url)
 
         self.go_back()
 
     def on_exit_red(self):
         print("Leaving state2")
+
 # psychology->blue
     def is_going_to_blue(self, event):
         text = event.message.text
