@@ -26,8 +26,7 @@ class TocMachine(GraphMachine):
         
         reply_token = event.reply_token
         send_text_message(reply_token, "選擇顏色:\n'1'紅色\n'2'藍色\n'3'綠色\n'4'黃色\n'5'紫色\n'6'白色\n'7'黑色")
-        # self.go_back()
-        
+        # self.go_back()      
 # psychology->red
     def is_going_to_red(self, event):
         text = event.message.text
@@ -266,11 +265,15 @@ class TocMachine(GraphMachine):
         return text.lower() == "1"
 
     def on_enter_negotitation(self, event):
-        print("I'm entering state1")
-
-        reply_token = event.reply_token
-        send_text_message(reply_token, "暖色系 ex:黃色、橘色\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
+        #print("I'm entering state1")
+        #reply_token = event.reply_token
+        #send_text_message(reply_token, "暖色系 ex:黃色、橘色\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
+        
+        #------send image message
+        url = 'https://i.imgur.com/VRrWf5C.jpg'
+        send_image_message(event.reply_token, url)
         self.go_back()
+        
 
     def on_exit_negotitation(self):
         print("Leaving state2")
@@ -280,10 +283,11 @@ class TocMachine(GraphMachine):
         return text.lower() == "2"
 
     def on_enter_meeting(self, event):
-        print("I'm entering state1")
-
-        reply_token = event.reply_token
-        send_text_message(reply_token, "冷色系 ex:藍色、綠色、紫色\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
+        #print("I'm entering state1")
+        #reply_token = event.reply_token
+        #send_text_message(reply_token, "冷色系 ex:藍色、綠色、紫色\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
+        url = 'https://i.imgur.com/WlciujF.jpg'
+        send_image_message(event.reply_token, url)
         self.go_back()
 
     def on_exit_meeting(self):
@@ -294,10 +298,11 @@ class TocMachine(GraphMachine):
         return text.lower() == "3"
 
     def on_enter_interviewcontract(self, event):
-        print("I'm entering state1")
-
-        reply_token = event.reply_token
-        send_text_message(reply_token, "無彩色 ex:黑色、灰色、白色\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
+        #print("I'm entering state1")
+        #reply_token = event.reply_token
+        #send_text_message(reply_token, "無彩色 ex:黑色、灰色、白色\n（重新開始）\n'1' 特定場合顏色穿搭'2' 穿搭顏色心理學")
+        url = 'https://i.imgur.com/hINtTA5.jpg'
+        send_image_message(event.reply_token, url)
         self.go_back()
     
     def on_exit_interviewcontract(self):
