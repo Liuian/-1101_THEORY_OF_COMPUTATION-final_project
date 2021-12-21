@@ -42,15 +42,15 @@ class TocMachine(GraphMachine):
         # send_image_message(event.reply_token, url)
         
         title = '紅色-穿搭顏色心理學'
-        text = 'RED describtion'
+        text = '愛穿紅色的人，大多具有冒險精神，勇於接受挑戰、擁有開闊的心胸接納新鮮事物，這類型的人通常也擅長於處理人際關係。'
         btn = [
             MessageTemplateAction(
-                label = '1',
-                text ='特定場合穿搭顏色建議'
+                label = '特定場合穿搭顏色建議',
+                text ='1'
             ),
             MessageTemplateAction(
-                label = '2',
-                text = '穿搭顏色心理學'
+                label = '穿搭顏色心理學',
+                text = '2'
             ),
         ]
         url = 'https://i.imgur.com/m2J2jdJ.png?1'
