@@ -25,7 +25,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state1")
         
         reply_token = event.reply_token
-        send_text_message(reply_token, "選擇顏色:\n'1'紅色\n'2'藍色\n'3'綠色\n'4'黃色\n'5'紫色\n'6'白色\n'7'黑色")
+        send_text_message(reply_token, "請選擇你想了解哪個顏色的心裡學:\n'1'紅色\n'2'藍色\n'3'綠色\n'4'黃色\n'5'紫色\n'6'白色\n'7'黑色")
         # self.go_back()      
 # psychology->red
     def is_going_to_red(self, event):
@@ -254,7 +254,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state2")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "選擇場合 : \n'1' 面對第一次約會，你該避開的穿搭顏色是？\n'2' 對方陷入低潮或難過情緒中，哪個顏色能讓他更依靠我呢？\n '3'今天是兩人一起精心策畫的日子，該穿這個顏色延續這樣的幸福感！\n'4'交往幾年還是來到倦怠期了，穿上這顏色就能有所改善？")
+        send_text_message(reply_token, "選擇情境以了解適合的穿著顏色 : \n'1' 第一次約會，該避開哪個顏色？\n'2' 對方陷入難過情緒中，哪個顏色能讓他更依靠我呢？\n '3' 在兩人一起精心策畫的日子，穿這個顏色延續幸福感!\n'4' 穿上這顏色就能改善倦怠期!")
         #self.go_back()
     #def on_exit_dating(self):
     #    print("Leaving state2")
