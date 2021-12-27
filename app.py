@@ -52,7 +52,11 @@ machine = TocMachine(
         "yellow",
         "purple",
         "white",
-        "black"
+        "black",
+        'firstdating',
+        'sad',
+        'joyful',
+        'boring'
     ],    # 總共有的states
     transitions=[
         {   # user->occasion
@@ -138,6 +142,30 @@ machine = TocMachine(
             "source": "work",
             "dest": "interviewcontract",
             "conditions": "is_going_to_interviewcontract",
+        },
+        {   # dating->firstdating
+            "trigger": "advance",
+            "source": "dating",
+            "dest": "firstdating",
+            "conditions": "is_going_to_firstdating",
+        },
+        {   # dating->sad
+            "trigger": "advance",
+            "source": "dating",
+            "dest": "sad",
+            "conditions": "is_going_to_sad",
+        },
+        {   # dating->joyful
+            "trigger": "advance",
+            "source": "dating",
+            "dest": "joyful",
+            "conditions": "is_going_to_joyful",
+        },
+        {   # dating->boring
+            "trigger": "advance",
+            "source": "dating",
+            "dest": "boring",
+            "conditions": "is_going_to_boring",
         },
         {   #go_back
             "trigger": "go_back", 

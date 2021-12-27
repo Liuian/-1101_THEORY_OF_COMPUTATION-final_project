@@ -254,11 +254,10 @@ class TocMachine(GraphMachine):
         print("I'm entering state2")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "重新開始\n\n選擇場合 : \n'1' 職場\n'2' 約會")
-        self.go_back()
-
-    def on_exit_dating(self):
-        print("Leaving state2")
+        send_text_message(reply_token, "選擇場合 : \n'1' 面對第一次約會，你該避開的穿搭顏色是？\n'2' 對方陷入低潮或難過情緒中，哪個顏色能讓他更依靠我呢？\n '3'今天是兩人一起精心策畫的日子，該穿這個顏色延續這樣的幸福感！\n'4'交往幾年還是來到倦怠期了，穿上這顏色就能有所改善？")
+        #self.go_back()
+    #def on_exit_dating(self):
+    #    print("Leaving state2")
 # work->negotitation(work-1):
     def is_going_to_negotitation(self, event):
         text = event.message.text
@@ -306,4 +305,63 @@ class TocMachine(GraphMachine):
         self.go_back()
     
     def on_exit_interviewcontract(self):
+        print("Leaving state2")
+# dating->firstdating(dating-1)
+    def is_going_to_firstdating(self, event):
+        text = event.message.text
+        return text.lower() == "1"
+
+    def on_enter_firstdating(self, event):
+        print("I'm entering state1")
+        reply_token = event.reply_token
+        send_text_message(reply_token, "正解:黃色!\n\n雖然多數人認為應該是看起來難以親近的黑色，但事實上更令人感到不舒服的黃色呢。如果一直盯著搶眼的黃色看的話，就會容易引發莫名的緊張感與警戒心，讓人有種手足無措的心理，尤其面對不熟悉或初次見面的人來說，反而會達到扣分效果。如果真的很想搭配黃色元素的話，那就先從小物配件類單品輕鬆地利用於穿搭中，距離感就能拿捏地很好。")
+        #url = 'https://i.imgur.com/hINtTA5.jpg'
+        #send_image_message(event.reply_token, url)
+        self.go_back()
+    
+    def on_exit_firstdating(self):
+        print("Leaving state2")
+# dating->sad(dating-2)
+    def is_going_to_sad(self, event):
+        text = event.message.text
+        return text.lower() == "2"
+
+    def on_enter_sad(self, event):
+        print("I'm entering state1")
+        reply_token = event.reply_token
+        send_text_message(reply_token, "正解:橘色!\n\n紅色調和黃色混和後能散發出活力健康的正能量感，你的存在就能安慰著他正混亂不定的心，對他而言這樣的你顯得相當值得信賴，說不定能毫不保留地對你吐露真心，也可大方地依賴著你。所以橘色系穿搭是想鼓舞度方、為他應援時可嘗試的顏色Look!")
+        #url = 'https://i.imgur.com/hINtTA5.jpg'
+        #send_image_message(event.reply_token, url)
+        self.go_back()
+    
+    def on_exit_sad(self):
+        print("Leaving state2")
+# dating->joyful(dating-3)
+    def is_going_to_joyful(self, event):
+        text = event.message.text
+        return text.lower() == "3"
+
+    def on_enter_joyful(self, event):
+        print("I'm entering state1")
+        reply_token = event.reply_token
+        send_text_message(reply_token, "正解:藍色!\n\n給人知性感覺的藍色系，在開放與保守間總是能取得良好的平衡；像這樣開心的出遊日中，你可以能一路上與他無話不聊讓他覺得與你聊天是一件有樂趣的事，旅途中遇到困難的話還能展現出你果決理性的一面，不但隨和又帶來了信任感，迫不及待想約你下次再出遊呢!")
+        #url = 'https://i.imgur.com/hINtTA5.jpg'
+        #send_image_message(event.reply_token, url)
+        self.go_back()
+    
+    def on_exit_joyful(self):
+        print("Leaving state2")
+# dating->boring(dating-4)
+    def is_going_to_boring(self, event):
+        text = event.message.text
+        return text.lower() == "4"
+
+    def on_enter_boring(self, event):
+        print("I'm entering state1")
+        reply_token = event.reply_token
+        send_text_message(reply_token, "正解:紫色!\n\n中和著充滿刺激感的紅色系與過於冷靜的藍色系，紫色調和出充滿智慧與神祕感的獨特性，由視覺反射出專屬於你的魅力反而能再度引起他對你的好奇心。秋冬也是紫色能好好活躍的季節，記得要常在他的視線範圍內投入紫色元素才更有效果喔!")
+        #url = 'https://i.imgur.com/hINtTA5.jpg'
+        #send_image_message(event.reply_token, url)
+        self.go_back()
+    def on_exit_boring(self):
         print("Leaving state2")
