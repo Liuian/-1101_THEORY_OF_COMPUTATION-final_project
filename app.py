@@ -170,7 +170,7 @@ machine = TocMachine(
         {   #go_back
             "trigger": "go_back", 
             "source": [
-                "dating",
+                #"dating",
                 "negotitation",
                 "meeting",
                 "interviewcontract",
@@ -180,7 +180,11 @@ machine = TocMachine(
                 "yellow",
                 "purple",
                 "wite",
-                "black"
+                "black",
+                'firstdating',
+                'sad',
+                'joyful',
+                'boring'
             ], 
             "dest": "user"
         },
