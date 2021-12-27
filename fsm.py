@@ -254,7 +254,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state2")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "選擇情境了解適合的穿著顏色 : \n'1' 第一次約會該避開的顏色?\n'2' 對方陷入難過情緒中，哪個顏色能讓他更依靠我呢？\n'3' 在兩人一起精心策畫的日子，穿這個顏色延續幸福感!\n'4' 穿上這顏色就能改善倦怠期!")
+        send_text_message(reply_token, "選擇情境了解適合的穿著顏色 : \n\n'1' 第一次約會該避開的顏色?\n'2' 對方陷入難過情緒中，哪個顏色能讓他更依靠我呢？\n'3' 在兩人一起精心策畫的日子，穿這個顏色延續幸福感!\n'4' 穿上這顏色就能改善倦怠期!")
         #self.go_back()
     #def on_exit_dating(self):
     #    print("Leaving state2")
